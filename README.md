@@ -57,7 +57,7 @@ The DMA transmission is exactly the same length as the ping-pong buffer, demandi
 Let’s look at the code specifically written for this project!
 
 ### Additional code - ClockDriver
-I am a bit torn about discussing this code since setting up the clocking of the device is pretty simple, yet absolutely crucial at the same time.
+I am a bit torn about discussing this code since setting up the clocking of the device is pretty simple, yet absolutely crucial at the same time (see figure 17 in the refman).
 
 It has been discussed often and many times thus I don't think I can contribute well on explaining it. I decided to make my own clocking file to have a better control over what is happening, not because it was strictly necesssary (unlike other HAL-based peripheral and setup options, clocking with CubeMx/HAL seems rock solid to me).
 
