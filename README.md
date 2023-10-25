@@ -55,3 +55,10 @@ The DMA transmission is exactly the same length as the ping-pong buffer, demandi
 
 ## User guide
 Let’s look at the code specifically written for this project!
+
+### Additional code - ClockDriver
+I am a bit torn about discussing this code since setting up the clocking of the device is pretty simple, yet absolutely crucial at the same time.
+
+It has been discussed often and many times thus I don't think I can contribute well on explaining it. I decided to make my own clocking file to have a better control over what is happening, not because it was strictly necesssary (unlike other HAL-based peripheral and setup options, clocking with CubeMx/HAL seems rock solid to me).
+
+I suppose the only thing that must be said that APB1 and APB2 must be both 16 MHz and AHB1 32 MHz to properly clock all preipherals. All in all, every peripheral is clocked connected to either APB1, APB2 or AHB1 with many of them having their own prescalers, decreasing the speed of the peripheral further. In order though to have proper output, all these clockings must be understood, tracked and set. DEeviation could completely mess up the harmony between elements!
