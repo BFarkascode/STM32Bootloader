@@ -56,6 +56,9 @@ The DMA transmission is exactly the same length as the ping-pong buffer, demandi
 ## User guide
 Let’s look at the code specifically written for this project!
 
+### main.c
+The only thing the main.c does is that it listens to the UART bus for a certain byte to come in. If it does come in, it activates the external controller after shutting down the TIM2 timer (for what TIM2 does, check the IRQ controller). If it does not for 5 seconds, the TIM2 IRQ is activated and we transition to the app.
+
 ### IRQ controller
 This holds all the IRQs (and priority functions) the bootloader is using, something that was previously stored locally for DMA and the UART. I moved them over to improve code readability.
 
@@ -64,9 +67,6 @@ The DMA IRQ is engaged upon both the half-way and the end point of the DMA's act
 The UART IRQ is the same as before and we use it to detect the end of a message.
 
 Lastly, we have a timer interrupt that goes off every time a second passes (TIM2 is set as the timer). If the IRQ is activated 5 times - indicating that 5 seconds have passed - we de-init and activate the app.
-
-### main.c
-The only thing the main.c does is that it listens to the UART bus for a certain byte to come in. If it does come in, it activates the external controller after shutting down the TIM2 timer (for what TIM2 does, check the IRQ controller). If it does not for 5 seconds, the TIM2 IRQ is activated and we transition to the app.
 
 ### Additional code - ClockDriver
 I am a bit torn about discussing this code since setting up the clocking of the device is pretty simple, yet absolutely crucial at the same time (see figure 17 in the refman). It is something that has been discussed often and many times thus I don't think I can contribute well to explaining it. Also, it is not strictly necesssary to write a custom clock driver since, unlike other HAL-based peripheral and setup options, clocking with CubeMx/HAL seems rock solid to me.
