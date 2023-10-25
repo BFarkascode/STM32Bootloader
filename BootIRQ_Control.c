@@ -80,7 +80,7 @@ void USART1_IRQHandler(void) {
 //3) TIM2 IRQ
 void TIM2_IRQHandler(void) {
 
-	  if (seconds_counter == Boot_transit_in_sec) {
+	  if (seconds_counter >= Boot_transit_in_sec) {
 
 		printf("De-initializing bootloader drivers...\r\n");
 		UART1Deinit();													//we deinit the UART1 driver
