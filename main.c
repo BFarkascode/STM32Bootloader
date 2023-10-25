@@ -166,11 +166,6 @@ int main(void)
 
   printf("Bootloader running...\r\n");
 
-  //detect signal calibration
-  RCC->IOPENR |=	(1<<1);																//PORTB clocking
-  GPIOB->MODER |= (1<<6);																//PB3 output
-  GPIOB->MODER &= ~(1<<7);																//PB3 output
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
