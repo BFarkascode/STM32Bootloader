@@ -59,6 +59,8 @@ Let’s look at the code specifically written for this project!
 ### main.c
 The only thing the main.c does is that it listens to the UART bus for a certain byte to come in. If it does come in, it activates the external controller after shutting down the TIM2 timer (for what TIM2 does, check the IRQ controller). If it does not for 5 seconds, the TIM2 IRQ is activated and we transition to the app.
 
+Additionally, there is the "write" which funnels printf to the CubeIDE.
+
 ### IRQ controller
 This holds all the IRQs (and priority functions) the bootloader is using, something that was previously stored locally for DMA and the UART. I moved them over to improve code readability.
 
