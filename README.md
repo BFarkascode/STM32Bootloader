@@ -35,14 +35,14 @@ The speed of the UART is chosen to be 57600 since anything faster does not allow
 
 We added a small function to enable the DMA on UART and another small function to de-initialise the UART completely. This latter is necessary to run the UART with and without DMA in the same code. Failing to completely reset the UART – that is, running it in manual mode while DMA is active or vice versa - will freeze the execution.
 
-### NVMDriver
+### NVM
 The app is placed in the memory position 0x8008000. As such, whatever machine code is coming through the serial into the bootloader, it must be compatible with that memory position.
 
 We are running half-page burst FLASH updates since it is significantly faster than the word-by-word version.
 
 We removed the EXTI, wanting to engage any FLASH update using UART commands instead.
 
-### NVIC_Usecase
+### NVIC
 The code is identical to the original project, except it has a “reset app” function added to the code.
 
 For code organization, the FLASH page update function is moved into the “BootAppManager.c” source code. This function is constructed to process the ping-pong buffer one half-page at a time as the buffer is being filled. The control of this action is done in the function defined within the “BootExternalController.c” source file.
