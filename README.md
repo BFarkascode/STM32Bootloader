@@ -42,7 +42,7 @@ We are running half-page burst FLASH updates since it is significantly faster th
 
 We removed the EXTI, wanting to engage any FLASH update using UART commands instead.
 
-### NVIC
+### NVIC (called AppManager here)
 The code is identical to the original project, except it has a “reset app” function added to the code.
 
 For code organization, the FLASH page update function is moved into the “BootAppManager.c” source code. This function is constructed to process the ping-pong buffer one half-page at a time as the buffer is being filled. The control of this action is done in the function defined within the “BootExternalController.c” source file.
