@@ -4,7 +4,7 @@ Arduino-style bootloader for an STM32 L0x3 mcu using bare metal programming.
 
 This is a general bootloader for the STM32L0xx devices. If commanded, it places incoming data at memory position 0x8008000 and jump to that position.
 
-Control and code reception is done using incoming serial. The “master” device can be whatever that can generate such a serial signal, albeit the command construction must follow the guidelines defined within the STM32_UARTDriver project.
+Control and code reception is done using incoming serial. The “master” device can be whatever that can generate such a serial signal, albeit the command construction must follow the guidelines defined within the STM32_UARTDriver project. The machine codes does not need to have a message start sequence.
 
 The bootloader can process for commands from the master. It can:
 -	Switch on external control
@@ -69,6 +69,17 @@ The DMA IRQ is engaged upon both the half-way and the end point of the DMA's act
 The UART IRQ is the same as before and we use it to detect the end of a message.
 
 Lastly, we have a timer interrupt that goes off every time a second passes (TIM2 is set as the timer). If the IRQ is activated 5 times - indicating that 5 seconds have passed - we de-init and activate the app.
+
+### External controller
+This is the command center of the bootloader. It expects certain command bytes to come in on the uart (0xaa for app activation, 0xbb for app update and 0xcc for reboot).
+
+The code is a state machine and sets its own flags to allow progression.
+
+In "command and control" mode, we aren't using the DMA and run the setup similar to how we did during the UARTDriver project (that is, we are blocking with our UART). We do activate the DMA within this mode and thus transition to the second part of the state machine, "programmer mode" (we aren;t blocking).
+
+When the DMA is active and machine code is coming in, it adjusts the values for the FLASH address depending on which half page we have extracted from the ping-pong buffer.
+
+Of note, all "break" lines break the entire state machine and force the execution to exit it. Thus, if we want to update the app, we need to first go to programmer mode with one uart transmission and then send over the machine code using a separate transmission.
 
 ### Additional code - ClockDriver
 I am a bit torn about discussing this code since setting up the clocking of the device is pretty simple, yet absolutely crucial at the same time (see figure 17 in the refman). It is something that has been discussed often and many times thus I don't think I can contribute well to explaining it. Also, it is not strictly necesssary to write a custom clock driver since, unlike other HAL-based peripheral and setup options, clocking with CubeMx/HAL seems rock solid to me.
