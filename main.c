@@ -85,20 +85,6 @@ int _write(int file, char *ptr, int len)
 	return len;
 }
 
-//blinky LED
-void Toggle_other_LED (void) {
-		RCC->IOPENR |=	(1<<1);															//PORTB clocking
-		GPIOB->MODER |= (1<<6);															//PB3 output
- 		GPIOB->MODER &= ~(1<<7);														//PB3 output
-
- 		uint32_t odr = GPIOB->ODR;
- 		if (((odr & (1<<3)) == (1<<3))) {												//if PB3 output was HIGH
- 		 	GPIOB->BRR |= (1<<3);														//we reset it
- 		} else {
- 		 	GPIOB->BSRR |= (1<<3);
- 		}
-}
-
 uint32_t Rx_Message_buf [64];															//buffer is 64 times 4 bytes / 1 word
 
 uint8_t* Rx_Message_buf_ptr;
