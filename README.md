@@ -16,12 +16,16 @@ The bootloader can process for commands from the master. It can:
 
 In case upon reset the bootloader does not receive a request to switch to external control in 5 seconds, it automatically de-initializes itself and activates the app.
 
-## To read
-There is no additional reading material necessary to understand this code. On the other hand, the following project must be understood profoundly:
+## Previous relevant projects
+The following projects should be checked:
 -	STM32_UARTDriver
 -	STM32_NVMDriver
 -	STM32_NVIC_Usecase
 -	STM32_DMADriver
+-	STM32_ClockDriver
+
+## To read
+There is no additional reading material necessary to understand this code.
 
 ## Particularities
 Here I want to touch upon the modifications that I had to implement on the projects I mentioned above to make them work together.
