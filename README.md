@@ -22,7 +22,7 @@ The following projects should be checked:
 -	STM32_NVMDriver
 -	STM32_NVIC_Usecase
 -	STM32_DMADriver
--	STM32_ClockDriver
+-	STM32_ClockDriver (without the PWM part)
 
 ## To read
 There is no additional reading material necessary to understand this code.
