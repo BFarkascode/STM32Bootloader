@@ -2,6 +2,8 @@
 
 Arduino-style bootloader for an STM32 L0x3 mcu using bare metal programming.
 
+## General description
+
 This is a general bootloader for the STM32L0xx devices. If commanded, it places incoming data at memory position 0x8008000 and jump to that position.
 
 Control and code reception is done using incoming serial. The “master” device can be whatever that can generate such a serial signal, albeit the command construction must follow the guidelines defined within the STM32_UARTDriver project. The machine codes does not need to have a message start sequence.
@@ -87,3 +89,5 @@ I am a bit torn about discussing this code since setting up the clocking of the 
 Then why did I do this? Well, I wanted to distance myself from HAL as much as possible and to have a better control over what is happening in the mcu in general. In general, one can ignore this code and replace everything with the CubeMx-generated clock config, it should also work (just replace the Delay_ms with HAL_Delay where necessary).
 
 I suppose the only thing that must be said that APB1 and APB2 must be both 16 MHz and AHB1 32 MHz to properly clock all peripherals All in all, every peripheral is clocked connected to either APB1, APB2 or AHB1 with many of them having their own prescalers, decreasing the speed of the peripheral further. Pay attention that timers (that includes the timer for the UART badu rate by the way) usually have a two times multiplier instead on the APB clock they are attached to. In order though to have proper output, all these clockings must be understood, tracked and set. Deviation could completely mess up the harmony between elements!
+
+(Note: in the meantime, I made a ClockDriver project that somewhat covers this additional section.)
