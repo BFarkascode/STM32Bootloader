@@ -3,8 +3,7 @@
  *  Author: BalazsFarkas
  *  Project: STM32_Bootloader
  *  Processor: STM32L053R8
- *  Compiler: ARM-GCC (STM32 IDE)
- *  HEader version: 1.0
+ *  Header version: 1.0
  *  File: BootUARTDriver_STM32L0x3.h
  *  Modified from: STM32_UARTDriver/UARTDriver_STM32L0x3.h
  *  Change history: N/A
