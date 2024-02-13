@@ -1,8 +1,12 @@
 /*
- * BootIRQ_Control_STM32L0x3.h				v.1.0.
- *
  *  Created on: Oct 24, 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Header version: 1.0
+ *  File: BootIRQ_Control_STM32L0x3.h
+ *  Modified from: N/A
+ *  Change history: N/A
  */
 
 #ifndef INC_BOOTIRQ_CONTROL_CUSTOM_H_
