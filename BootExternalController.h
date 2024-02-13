@@ -1,8 +1,12 @@
 /*
- * BootExternalController.h				v.1.0.
- *
  *  Created on: 24 Oct 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Header version: 1.0
+ *  File: BootExternalController.h
+ *  Modified from: N/A
+ *  Change history: N/A
  */
 
 #ifndef INC_EXTERNALCONTROLLER_CUSTOM_H_
