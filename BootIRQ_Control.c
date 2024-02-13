@@ -1,8 +1,13 @@
 /*
- * BootIRQ_Control_STM32L0x3.c				v.1.0
- *
  *  Created on: Oct 24, 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Program version: 1.0
+ *  File: BootIRQ_Control_STM32L0x3.c
+ *  Modified from: N/A
+ *  Change history:
  *
  *  Code holds the IRQs and their respective priorities.
  *
