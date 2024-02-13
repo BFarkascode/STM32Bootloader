@@ -1,8 +1,13 @@
 /*
- * BootDMADriver_STM32L0x3.h				v.1.0.
- *
  *  Created on: Oct 24, 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Header version: 1.0
+ *  File: BootDMADriver_STM32L0x3.h
+ *  Modified from: STM32_DMADriver/DMADriver_STM32L0x3.h
+ *  Change history: N/A
  */
 
 #ifndef INC_BOOTDMADRIVER_CUSTOM_H_
