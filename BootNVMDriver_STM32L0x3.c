@@ -3,7 +3,6 @@
  *  Author: BalazsFarkas
  *  Project: STM32_Bootloader
  *  Processor: STM32L053R8
- *  Compiler: ARM-GCC (STM32 IDE)
  *  Program version: 1.0
  *  File: BootNVMDriver_STM32L0x3.c
  *  Modified from: STM32_NVMDriver/NVMDriver_STM32L0x3.c
