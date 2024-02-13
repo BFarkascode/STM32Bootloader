@@ -1,8 +1,12 @@
 /*
- * BootClockDriver_STM32L0x3.h			v.1.0
- *
  *  Created on: Oct 24, 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Program version: 1.0
+ *  File: BootClockDriver_STM32L0x3.c
+ *  Modified from: STM32_ClockDriver/ClockDriver_STM32L0x3.c
+ *  Change history: N/A
  */
 
 #ifndef INC_BOOTRCCTIMPWMDELAY_CUSTOM_H_
