@@ -1,8 +1,12 @@
 /*
- * BootExternalController.c				v.1.0.
- *
  *  Created on: 24 Oct 2023
- *      Author: Balazs Farkas
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Program version: 1.0
+ *  File: BootExternalController.c
+ *  Modified from: N/A
+ *  Change history:
  *
  * v.1.0
  * UART1-based external controller.
