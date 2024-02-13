@@ -1,10 +1,13 @@
 /*
- *
- * BootUARTDriver_STM32L0x3.c				v.1.0.
- *
  *  Created on: Oct 24, 2023
- *      Author: BalazsFarkas
- *
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Program version: 1.0
+ *  File: BootUARTDriver_STM32L0x3.c
+ *  Modified from: STM32_UARTDriver/UARTDriver_STM32L0x3.c
+ *  Change history:
  *
  * v.1.0.
  * Slight rework of the previously written UART1 driver code.
