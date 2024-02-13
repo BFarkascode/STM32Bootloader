@@ -1,5 +1,14 @@
 /* USER CODE BEGIN Header */
 /**
+ *  Author: BalazsFarkas
+ *  Project: STM32_Bootloader
+ *  Processor: STM32L053R8
+ *  Compiler: ARM-GCC (STM32 IDE)
+ *  Program version: 1.0
+ *  File: main.c
+ *  Hardware description/pin distribution: UART Tx on Pa9, Rx on PA10
+ *  Modified from: N/A
+ *  Change history: N/A
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
